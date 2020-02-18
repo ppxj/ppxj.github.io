@@ -86,14 +86,14 @@
 
 
 
-<meta name="description" content="本站所用到的所有网站及工具域名：阿里云购买博客框架：Hexo服务器：gitpage主题：NexTCDN全站加速 cloudflare(可申请强制https，url小绿锁)  免费CDNjsDelivr – Open Source CDN 评论系统： LeanCloud的 Valine（LeanCloud的国际版无需实名认证，不用上传身份证）  页面统计： LeanCloud[百度统计]（https">
+<meta name="description" content="本站所用到的所有网站及工具域名：阿里云购买博客框架：Hexo服务器：gitpage主题：NexTCDN全站加速 cloudflare(可申请强制https，url小绿锁)  免费CDNjsDelivr – Open Source CDN 评论系统： LeanCloud的 Valine（LeanCloud的国际版无需实名认证，不用上传身份证）  页面统计： LeanCloud百度统计  写文章语法：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+gitpage+next本站所用到的所有网站及工具">
 <meta property="og:url" content="https://heis.fun/2020/02/18/aboutthissite/index.html">
 <meta property="og:site_name" content="he is.fun">
-<meta property="og:description" content="本站所用到的所有网站及工具域名：阿里云购买博客框架：Hexo服务器：gitpage主题：NexTCDN全站加速 cloudflare(可申请强制https，url小绿锁)  免费CDNjsDelivr – Open Source CDN 评论系统： LeanCloud的 Valine（LeanCloud的国际版无需实名认证，不用上传身份证）  页面统计： LeanCloud[百度统计]（https">
+<meta property="og:description" content="本站所用到的所有网站及工具域名：阿里云购买博客框架：Hexo服务器：gitpage主题：NexTCDN全站加速 cloudflare(可申请强制https，url小绿锁)  免费CDNjsDelivr – Open Source CDN 评论系统： LeanCloud的 Valine（LeanCloud的国际版无需实名认证，不用上传身份证）  页面统计： LeanCloud百度统计  写文章语法：">
 <meta property="article:published_time" content="2020-02-18T08:43:06.000Z">
-<meta property="article:modified_time" content="2020-02-18T08:52:05.977Z">
+<meta property="article:modified_time" content="2020-02-18T09:02:25.277Z">
 <meta property="article:author" content="he is.fun">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -362,6 +362,17 @@
 
           
           
+             <span id="/2020/02/18/aboutthissite/" class="leancloud_visitors" data-flag-title="hexo+gitpage+next本站所用到的所有网站及工具">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
 
           
 
@@ -421,10 +432,10 @@
 <p>LeanCloud的 <a href="https://valine.js.org/" target="_blank" rel="noopener">Valine</a><br>（LeanCloud的国际版无需实名认证，不用上传身份证）</p>
 </blockquote>
 <h3 id="页面统计："><a href="#页面统计：" class="headerlink" title="页面统计："></a>页面统计：</h3><blockquote>
-<p><a href="https://leancloud.app/" target="_blank" rel="noopener">LeanCloud</a><br>[百度统计]（<a href="https://tongji.baidu.com/）" target="_blank" rel="noopener">https://tongji.baidu.com/）</a></p>
+<p><a href="https://leancloud.app/" target="_blank" rel="noopener">LeanCloud</a><br><a href="https://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a></p>
 </blockquote>
 <h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><h5 id="语法：-Markdown"><a href="#语法：-Markdown" class="headerlink" title="语法： Markdown"></a>语法： Markdown</h5><h5 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h5><blockquote>
-<p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown学习链接</a></p>
+<p>Markdown编辑器 <a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">Markdown学习链接</a></p>
 </blockquote>
 
       
@@ -1155,6 +1166,113 @@
 
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("0qSJGyEGwtSqGDvg0ek4hwFt-MdYXbMMI", "UrhWRUfkzbsBB7OpDhL4qPDd");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
   
 
